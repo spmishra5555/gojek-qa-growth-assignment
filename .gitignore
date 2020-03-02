@@ -1,0 +1,8 @@
+.allure
+.gradle
+.idea
+logs
+out
+Result.csv
+allure-results
+build

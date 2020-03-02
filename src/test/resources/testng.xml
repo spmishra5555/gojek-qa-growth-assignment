@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="QA Growth Assignment" verbose="1">
+    <test name="compareUserResponse" parallel="classes" thread-count="20">
+        <packages>
+            <package name="io.gojek.tests"/>
+        </packages>
+    </test>
+</suite>
+
+
