@@ -19,6 +19,10 @@ public class RestClient {
 
     }
 
+    /**
+     * @param url
+     * @return
+     */
     public static Response getResponse(String url) {
 
         return RestAssured.given().relaxedHTTPSValidation().accept("application/json").when().get(url).thenReturn();

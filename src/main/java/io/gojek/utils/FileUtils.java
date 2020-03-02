@@ -19,6 +19,12 @@ public class FileUtils {
     public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper().findAndRegisterModules()
             .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES).enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
 
+    /**
+     * Reading file line by line
+     *
+     * @param file
+     * @return
+     */
     public static List<String> readLines(File file) {
         try {
             return Files.readLines(file, Charset.defaultCharset());
@@ -28,6 +34,14 @@ public class FileUtils {
         }
     }
 
+    /**
+     * To parse the json and convert it into java object
+     *
+     * @param json
+     * @param clazz
+     * @param <S>
+     * @return
+     */
     public static <S> S jsonToPojo(String json, Class<S> clazz) {
         try {
             return OBJECT_MAPPER.readValue(json, clazz);

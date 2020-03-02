@@ -36,6 +36,9 @@ public class CompareUserResponseTest {
         csvResponse.add(String.join(",", args));//To update the csv file with output
     }
 
+    /**
+     * This method is to compare the responses of both the urls of respective files
+     */
     private boolean compareResponse(Response response1, Response response2) {
         boolean isEqual = response1.getStatusCode() == response2.getStatusCode();
 
@@ -52,10 +55,10 @@ public class CompareUserResponseTest {
         return isEqual;
     }
 
-    @AfterClass
+    @AfterClass(description = "To print the result in CSV file")
     public void printResponseInCSV() throws IOException {
 
-        File file = new File("Result.csv");
+        File file = new File("Result.csv");//Name of the file
 
         try (FileWriter writer = new FileWriter(file)) {
             writer.append("URL from the 1st file,IsEqual,URL from the 2nd file" + System.lineSeparator());
